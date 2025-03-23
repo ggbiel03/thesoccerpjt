@@ -22,6 +22,9 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+a {
+	text-decoration: none;
+}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
@@ -50,6 +53,189 @@ table {
     --font:"Inter", sans-serif;
     font-family: var(--font);
     --primary: #1e302b;
-    --secondary: #edcf85;    
-    
+    --secondary: #edcf85;
+	max-width: 100%;
+	overflow-x: hidden;
+	font-size: 16px;
+}
+
+.container {
+	max-width: 100%;
+	width: 1024px;
+	margin: 0 auto;
+}
+
+/* Header */
+.header {
+	background-color: var(--primary);
+}
+
+.header_nav {
+	display: flex;
+	justify-content: space-between;
+	padding: 0px 30px;
+}
+
+.header_nav img{
+	height: 30px;
+	padding: 15px 0;
+}
+
+.header_escudo a{
+	padding: 0 8px;
+}
+
+.header_usuario {
+	display: flex;
+	align-items: center;
+}
+
+.header_usuario > * {
+	padding: 0 8px;
+}
+
+.header_nome {
+	color: #ffffff;
+	display: none;
+}
+
+.header_nome--active {
+	display: block;
+}
+
+.header_user {
+	position: relative;
+}
+
+.header_user:hover .header_user-menu {
+	display: block;
+}
+
+.header_user-menu {
+	position: absolute;
+	display: none;
+	background-color: #ffffff;
+	border: 1px var(--primary) solid;
+	right: 0;
+	top: 100%;
+	text-wrap: nowrap;
+	border-radius: 5px;
+	text-align: center;
+	z-index: 15;
+}
+
+.header_user-menu::before {
+	content: "";
+	height: 20px;
+	width: 20px;
+	/*background-color: red;
+	position: absolute;
+	top: 0;
+	display: block;
+	right: 18px;
+	transform: rotate(45deg) translateY(-50%);
+	z-index: 0;*/
+}
+
+.header_user-menu li {
+	padding: 10px;
+}
+
+.header_user-menu a:not(:last-of-type) li {
+	border-bottom: 1px var(--primary) solid;
+}
+
+.header_user-menu a {
+	color: var(--primary);
+	font-weight: 300;
+}
+
+.header_user-menu a:hover li{
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.header_logo {
+	position: absolute;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	background: none;
+	background: linear-gradient(0deg, rgba(30,48,43,0) 0%, rgba(30,48,43,1) 100%);
+	padding-bottom: 5%;
+}
+
+.header_logo img {
+	width: 200px;	
+	margin-top: -25%;
+}
+
+/* Banner */
+
+.banner {
+	padding-top: 10%;
+	background-color: var(--primary);
+	background-image: url(../img/bc_home.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.banner_item {
+	display: flex;
+}
+
+.banner_img {
+	width: 50%;
+	display: flex;
+	align-items: flex-end;
+	padding-right: 20px;
+}
+
+.banner_img img{
+	width: 100%;
+}
+
+.banner_titulo {
+	text-transform: uppercase;
+	font-weight: 900;
+	color: #ffffff;
+	font-size: 60px;
+	flex-grow: 1;
+}
+
+.banner_info {
+	align-self: center;
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 75px;
+
+}
+
+/* .banner_info > * {
+	flex-basis: 0;
+} */
+
+.banner_modelo {
+	background-color: var(--primary);
+	display: inline-block;
+	color: #ffffff;
+	font-size: 30px;
+	padding: 7px 20px 8px;
+	margin-top: 10px;
+	width: fit-content;
+}
+
+.banner_btn {
+	background-color: var(--secondary);
+	display: block;
+	color: var(--primary);
+	font-size: 30px;
+	font-weight: 200;
+	text-transform: uppercase;
+	border-radius: 6px;
+	margin-top: 10px;
+	width: fit-content;
+	padding: 8px 20px 8px;
+	box-shadow: 8px 8px 0 rgba(30, 48, 43, 0.8);
 }

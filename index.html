@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,10 @@
     <link rel="shortcut icon" href="img/icon/ico.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <!-- Inicio Header -->
-    <header class="header header-home" >
+    <header class="header header-home">
         <nav class="header_nav">
             <div class="header_escudo">
                 <a href="#">
@@ -21,12 +23,12 @@
                 <a href="#">
                     <img src="img/icon/ico_santos.png" alt="Loja Santos">
                 </a>
-                <a href="#">    
+                <a href="#">
                     <img src="img/icon/ico_sp.png" alt="Loja São Paulo">
-                </a>    
-            </div> 
+                </a>
+            </div>
             <div class="header_usuario">
-                <p class="header_nome">Olá, Gabriel!</p>
+                <p class="header_nome header_nome--active">Olá, <span id="username">Gabriel!</span></p>
                 <a href="#">
                     <img src="img/icon/bag.png" alt="Carrinho de Compras">
                 </a>
@@ -35,23 +37,46 @@
                         <img src="img/icon/user.png" alt="Login/Cadastro">
                     </a>
                     <ul class="header_user-menu">
-                        <a href="#"> 
+                        <a href="#">
                             <li>MEUS PEDIDOS</li>
                         </a>
-                        <a href="#"> 
+                        <a href="#">
                             <li>MINHAS INFORMAÇÕES</li>
                         </a>
-                        <a href="#"> 
+                        <a href="#">
                             <li>SAIR</li>
                         </a>
                     </ul>
                 </div>
             </div>
         </nav>
-        <a href="index.html" class="header_logo">
-            <img src="img/soccer_store_logo_c.png" alt="The Soccer Store">
-        </a>
+        <div class="header_logo">
+            <a href="index.html" class="header_logo-link">
+                <img src="img/soccer_store_logo_c.png" alt="The Soccer Store">
+            </a>
+        </div>
+
     </header>
     <!-- Fim da Header -->
+
+    <!-- Inicio Banner - Carrosel -->
+    <div class="banner">
+        <div class="container">
+            <div class="owl-carousel owl-theme">
+                <div class="item banner_item">
+                    <div class="banner_img"> 
+                        <img src="img/banner/corinthians.png" alt="Jogador do Corinthians com Camisa Versão 1 24/25">
+                    </div>
+                    <div class="banner_info">
+                        <h2 class="banner_titulo">Faça parte da <br> batalha <br> contra o  <br> racismo</h2>
+                        <p class="banner_modelo">Camisa Corinthians I 24/25</p>
+                        <a href="#" class="banner_btn">CONFIRA</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fim Banner - Carrossel -->
 </body>
+
 </html>
