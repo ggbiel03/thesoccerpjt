@@ -48,6 +48,7 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
 /* raiz do projeto, especificação */
 :root {
     --font:"Inter", sans-serif;
@@ -56,13 +57,47 @@ table {
     --secondary: #edcf85;
 	max-width: 100%;
 	overflow-x: hidden;
-	font-size: 16px;
+	font-size: 62.5%;
+	background-color: #FFFDFA;
+}
+
+body {
+	font-size: 1.6rem;
 }
 
 .container {
 	max-width: 100%;
 	width: 1024px;
 	margin: 0 auto;
+}
+
+.form input,
+.form select {
+	padding: 0.5rem;
+	font-size: 1.8rem;
+}
+
+.form input[type="email"],
+.form input[type="text"],
+.form select {
+	border: 2px solid var(--secondary);
+	color: var(--primary)
+}
+
+.form input[type="email"] {
+	grid-column: span 2;
+}
+
+.form input[type="submit"] {
+	background-color: var(--secondary);
+	color: var(--primary);
+	border-radius: 0.5rem;
+	border: none;
+}
+
+.form input[type="submit"]:hover {
+	background-color: #cbb174;
+	cursor: pointer;
 }
 
 /* Header */
@@ -83,6 +118,13 @@ table {
 
 .header_escudo a{
 	padding: 0 8px;
+}
+
+.header_escudo img {
+	transition: linear 0.1s;
+}
+.header_escudo img:hover {
+	transform: scale(1.4);
 }
 
 .header_usuario {
@@ -169,10 +211,11 @@ table {
 	margin-top: -25%;
 }
 
+/* HOME________________________________________________________*/
 /* Banner */
 
 .banner {
-	padding-top: 10%;
+	padding-top: 130px;
 	background-color: var(--primary);
 	background-image: url(../img/bc_home.jpg);
 	background-repeat: no-repeat;
@@ -200,7 +243,7 @@ table {
 	text-transform: uppercase;
 	font-weight: 900;
 	color: #ffffff;
-	font-size: 60px;
+	font-size: 6rem;
 	flex-grow: 1;
 }
 
@@ -209,33 +252,242 @@ table {
 	display: flex;
 	flex-direction: column;
 	padding-bottom: 75px;
-
+	justify-content: flex-start;
+	align-items: flex-start;
 }
-
-/* .banner_info > * {
-	flex-basis: 0;
-} */
 
 .banner_modelo {
 	background-color: var(--primary);
 	display: inline-block;
 	color: #ffffff;
-	font-size: 30px;
+	font-size: 3rem;
 	padding: 7px 20px 8px;
 	margin-top: 10px;
-	width: fit-content;
 }
 
 .banner_btn {
 	background-color: var(--secondary);
 	display: block;
 	color: var(--primary);
-	font-size: 30px;
+	font-size: 3rem;
 	font-weight: 200;
 	text-transform: uppercase;
 	border-radius: 6px;
 	margin-top: 10px;
-	width: fit-content;
 	padding: 8px 20px 8px;
 	box-shadow: 8px 8px 0 rgba(30, 48, 43, 0.8);
+}
+
+
+/* Lojas */
+.lojas {
+	display: flex;
+	flex-flow: column;
+	background-color: var(--primary);
+	color: #ffffff;
+	padding: 4rem 0;
+}
+
+.lojas_titulo {
+	align-self: center;
+	margin-bottom: 1rem;;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 2rem;
+	color: var(--secondary);
+}
+
+.lojas_escudos {
+	display: flex;
+	align-items: center;
+	gap: 7rem;
+}
+
+.lojas_escudos img {
+	transition: linear 0.1s;
+}
+
+.lojas_escudos img:hover {
+	transform: scale(1.1);
+}
+
+.lojas_escudos > a {
+	flex-grow: 1;
+	flex-basis: 22%;
+}
+
+/* Produtos */
+.produtos {
+	margin: 7rem 1rem;
+}
+
+.produtos_itens {
+	display: flex;
+	gap: 1rem;
+}
+
+.produtos_titulo {
+	color: var(--primary);
+	font-weight: 600;
+	text-transform: uppercase;
+	font-size: 5rem;
+	border-bottom: 5px solid var(--secondary);
+	margin-bottom: 2rem;
+}
+
+.produtos_produto {
+	display: flex;
+	flex-flow: column;
+	width: 25%;
+	padding: 1rem;
+	transition: linear 0.1s;
+}
+
+.produtos_produto:hover {
+	box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+}
+
+.produtos_imagem img {
+	width: 100%;
+}
+
+.produtos_produto a {
+	color: var(--primary);
+}
+
+.produtos_nome {
+	text-transform: uppercase;
+	margin-top: 1rem;
+}
+
+.produtos_preco {
+	font-weight: 800;
+	font-size: 2.2rem;
+	margin-top: 1rem;
+}
+
+.produtos_parcelas {
+	font-size: 1.4rem;
+	margin-top: 0.4rem;
+}
+
+/* NEWSLETTER________________________________________________________*/
+
+.newsletter {	
+	background-color: var(--primary);
+	border-top: 5px solid var(--secondary);
+}
+
+.newsletter_holder {
+	background-image: url(../img/bc_news.jpg);
+	background-size: 50%;
+	background-repeat: no-repeat;
+	background-position: 0	0;
+}
+
+.newsletter_form {
+	width: 50%;
+	margin-left: 50%;
+	padding: 5rem 1rem;
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: auto;
+}
+
+.newsletter_title {
+	color: var(--secondary);
+	font-weight: 200;
+	margin-bottom: 1rem;
+	font-size: 2rem;	
+	grid-column: span 2;
+}
+
+.newsletter_title strong {
+	font-weight: 600;
+}
+
+.newsletter_form select:invalid,
+.newsletter_formselect option[value=""] {
+  color: gray;
+}
+
+/* FOOTER________________________________________________________*/
+.footer {	
+	background-color: var(--primary);	
+	color: var(--secondary);
+	font-weight: 200;
+}
+
+.footer_info {
+	display: grid;	
+	grid-template-columns: repeat(5, 1fr);
+	padding: 0 5rem;
+	border-top: 1px solid var(--secondary);
+}
+
+.footer ul {
+	padding: 2rem 0 2rem 2rem ;
+}
+
+.footer ul:not(:last-child) {
+	border-right: 1px solid var(--secondary);
+}
+
+.footer h2 {
+	font-weight: 600;
+	border-bottom: 1px solid var(--secondary);
+	margin-bottom: 1rem;
+}
+
+.footer a,
+.footer li {
+	color: var(--secondary);
+	line-height: 1.3;
+}
+
+.footer_contato {
+	grid-column: span 2;
+}
+
+
+.footer_contato li {
+	--icon-size: 1.5rem;
+	margin-left: 2.5rem;
+	position: relative;
+}
+
+.footer_contato li::before {		
+	content: "";
+	width: var(--icon-size);
+	height: var(--icon-size);
+	position: absolute;
+	left: calc(-1 * (var(--icon-size) + var(--icon-size) / 3 ));
+	transform: translateY(25%);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.footer_email::before {	
+	background-image: url(../img/icon/email_ico.png) ;
+}
+
+.footer_fone::before {
+	background-image: url(../img/icon/phone_ico.png);
+}
+
+.footer_endereco::before {
+	background-image: url(../img/icon/place_ico.png);
+}
+
+.footer_direitos {
+	border-top: 1px solid var(--secondary);
+	color: #ffffff;
+	text-align: center;
+	padding: 1.5rem 0;
+	font-size: 1.3rem;
+}
+
+.footer_direitos strong {
+	font-weight: 600;
 }
