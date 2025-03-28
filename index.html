@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Soccer Store</title>
     <link rel="shortcut icon" href="img/icon/ico.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <script src="scripts/jquery-3.7.1.min.js"></script>
+    <script src="scripts/owl.carousel.min.js"></script>
 </head>
 
 <body>
@@ -27,26 +32,30 @@
                     <img src="img/icon/ico_sp.png" alt="Loja São do Paulo" title="Loja São do Paulo">
                 </a>
             </div>
-            <div class="header_usuario">
-                <p class="header_nome header_nome--active">Olá, <span id="username">Gabriel!</span></p>
-                <a href="#">
+            <!-- Add/remover classe header_usuario--active conforme usuário logado -->
+            <div class="header_usuario header_usuario--active">
+                <p class="header_nome">Olá, <span id="username">Gabriel!</span></p>
+                <a href="#" class="header_carrinho">
                     <img src="img/icon/bag.png" alt="Carrinho de Compras">
                 </a>
                 <div class="header_user">
-                    <a href="#" class="header_link-user">
-                        <img src="img/icon/user.png" alt="Login/Cadastro">
-                    </a>
-                    <ul class="header_user-menu">
-                        <a href="#">
-                            <li>MEUS PEDIDOS</li>
-                        </a>
-                        <a href="#">
-                            <li>MINHAS INFORMAÇÕES</li>
-                        </a>
-                        <a href="#">
-                            <li>SAIR</li>
-                        </a>
-                    </ul>
+                    <a href="#" class="header_login">Entrar / Cadastro</a>
+                    <div class="header_user-menu">
+                        <label for="user_menu"><img src="img/icon/user.png" class="header_user-icon"
+                                alt="Menu Usuário"></label>
+                        <input type="checkbox" name="user_menu" id="user_menu">
+                        <ul class="header_show-menu">
+                            <a href="#">
+                                <li>MEUS PEDIDOS</li>
+                            </a>
+                            <a href="#">
+                                <li>MINHAS INFORMAÇÕES</li>
+                            </a>
+                            <a href="#">
+                                <li>SAIR</li>
+                            </a>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -63,6 +72,28 @@
     <div class="banner">
         <div class="container">
             <div class="owl-carousel owl-theme">
+                <div class="item banner_item">
+                    <div class="banner_img">
+                        <img src="img/banner/corinthians.png" alt="Jogador do Corinthians com Camisa Versão 1 24/25">
+                    </div>
+                    <div class="banner_info">
+                        <h2 class="banner_titulo">Faça parte da <br> batalha <br> contra o <br> racismo</h2>
+                        <p class="banner_modelo">Camisa Corinthians I 24/25</p>
+                        <a href="#" class="banner_btn">CONFIRA</a>
+                    </div>
+                </div>
+
+                <div class="item banner_item">
+                    <div class="banner_img">
+                        <img src="img/banner/corinthians.png" alt="Jogador do Corinthians com Camisa Versão 1 24/25">
+                    </div>
+                    <div class="banner_info">
+                        <h2 class="banner_titulo">Faça parte da <br> batalha <br> contra o <br> racismo</h2>
+                        <p class="banner_modelo">Camisa Corinthians I 24/25</p>
+                        <a href="#" class="banner_btn">CONFIRA</a>
+                    </div>
+                </div>
+
                 <div class="item banner_item">
                     <div class="banner_img">
                         <img src="img/banner/corinthians.png" alt="Jogador do Corinthians com Camisa Versão 1 24/25">
@@ -247,6 +278,7 @@
                 </select>
 
                 <input type="submit" value="Receber Novidades" />
+
             </form>
         </div>
     </div>
@@ -289,6 +321,16 @@
         </div>
     </footer>
     <!-- Fim Footer -->
+
+    <script>
+        var owl = $('.owl-carousel');
+        owl.owlCarousel({
+            loop: true,
+            items: 1,
+            autoplay: true,
+            autoplayTimeout: 10000
+        })
+    </script>
 </body>
 
 </html>
