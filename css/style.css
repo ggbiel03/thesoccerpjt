@@ -564,7 +564,7 @@ body {
 
 .produtos_itens {
 	display: grid;
-	gap: 1rem;
+	gap: 2rem;
 	grid-template-columns: repeat(4, 1fr);
 }
 
@@ -820,11 +820,8 @@ body {
 }
 
 .banner-loja_escudo {
-	height: 10rem;	
-}
-
-.banner-loja_escudo {
-    filter: saturate(0) brightness(180%);
+	height: 10rem;
+	filter: saturate(0) brightness(180%);	
 }
 
 .banner-loja_nome {
@@ -841,4 +838,10 @@ body {
 	font-size: 3rem;
 	font-weight: 600;
 	
+}
+
+@media (max-width: 768px) {
+	.banner-loja_escudo {
+		height: 7rem;
+	}
 }
