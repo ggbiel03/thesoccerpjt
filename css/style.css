@@ -189,6 +189,37 @@ body {
 	cursor: pointer;
 }
 
+.mapa {
+	display: flex;
+	gap: 2rem;
+	margin-left: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.mapa li {
+	position: relative;
+}
+
+.mapa li:last-of-type {
+	font-weight: 600;
+}
+
+.mapa li + li::before {
+	content: "";
+	position: absolute;
+	border-width: 0.7rem;
+	border-style: solid;
+	border-color: transparent transparent transparent var(--primary);
+	left: -1rem;
+	top: 0;
+	bottom: 0;
+	transform: translateX(-25%) scale(0.7);
+}
+
+.mapa a {
+	color: var(--primary);
+}
+
 /* Header */
 .header {
 	background-color: var(--primary);
@@ -347,7 +378,7 @@ body {
 		width: 125px;
 		margin-top: 0.5rem;
 	}
-	
+
 	.header_nome {
 		font-size: 1.3rem;
 	}
@@ -758,4 +789,56 @@ body {
 	.footer ul:last-of-type {
 		padding: 2rem 0 3rem;
 	}
+}
+
+/* LOJAS________________________________________________________*/
+.banner-loja {
+	background-color: var(--primary);
+	padding: 10rem 8% 4rem;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	/* background-attachment: fixed; */
+	display: flex;
+	align-items: center;
+}
+
+.banner-loja--corinthians {
+	background-image: url(../img/shop_header/corinthians_header.jpg);
+}
+
+.banner-loja--palmeiras {
+	background-image: url(../img/shop_header/palmeiras_header.jpg);
+}
+
+.banner-loja--santos {
+	background-image: url(../img/shop_header/santos_header.jpg);
+}
+
+.banner-loja--saopaulo {
+	background-image: url(../img/shop_header/saopaulo_header.jpg);
+}
+
+.banner-loja_escudo {
+	height: 10rem;	
+}
+
+.banner-loja_escudo {
+    filter: saturate(0) brightness(180%);
+}
+
+.banner-loja_nome {
+	color: #ffffff;
+	font-size: 2.2rem;
+	font-weight: 200;
+	margin-left: 2rem;
+	letter-spacing: 0.2ch;
+	line-height: 1.1;
+}
+
+.banner-loja_nome strong {
+	display: block;
+	font-size: 3rem;
+	font-weight: 600;
+	
 }
