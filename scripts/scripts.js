@@ -16,7 +16,7 @@ let headerContent = `
                 </a>
             </div>
             <!-- Add/remover classe header_usuario--active conforme usuário logado -->
-            <div class="header_usuario header_usuario--active">
+            <div class="header_usuario">
                 <p class="header_nome">Olá, <span id="username">Gabriel!</span></p>
                 <a href="cart.html" class="header_carrinho">
                     <img src="img/icon/bag.png" alt="Carrinho de Compras">
