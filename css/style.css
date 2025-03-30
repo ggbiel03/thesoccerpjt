@@ -202,18 +202,18 @@ hr {
 
 .form fieldset {
 	display: flex;
-	flex-flow: column;	
+	flex-flow: column;
 	border-radius: 1rem;
 	min-width: 0;
 }
 
 .form fieldset input,
-.form fieldset select{
+.form fieldset select {
 	border-color: transparent transparent var(--primary) transparent !important;
 	background-color: #eeeeee;
 }
 
-::-webkit-input-placeholder{
+::-webkit-input-placeholder {
 	font-family: var(--font);
 	font-size: 1.6rem;
 	font-weight: 300;
@@ -928,14 +928,6 @@ hr {
 	opacity: 30%;
 }
 
-.login-bc_blob {
-	height: 100%;
-	width: 100%;
-	background-color: var(--secondary);
-	animation: 120s linear infinite alternate blob;
-	transform: scale(1.5);
-}
-
 .login-bc::before {
 	content: "";
 	height: 100%;
@@ -996,15 +988,15 @@ hr {
 	max-width: 80vw;
 	width: var(--width);
 	display: flex;
-	opacity: 0;	
+	opacity: 0;
 	pointer-events: none;
 	justify-self: center;
 	overflow: hidden;
 }
 
 .login_form:first-of-type {
-	opacity: 1;	
-	pointer-events: all;	
+	opacity: 1;
+	pointer-events: all;
 }
 
 .login_form:not(:first-of-type) {
@@ -1025,7 +1017,8 @@ hr {
 	99% {
 		display: flex;
 		opacity: 0;
-		transform: translateX(-100%);	}
+		transform: translateX(-100%);
+	}
 
 	100% {
 		display: none;
@@ -1082,7 +1075,7 @@ hr {
 	color: #28529e;
 }
 
-.login_change-btn + .login_change-btn {
+.login_change-btn+.login_change-btn {
 	margin-top: 0.5rem;
 }
 
@@ -1101,12 +1094,12 @@ hr {
 	gap: 3rem;
 }
 
-.half > * {
+.half>* {
 	min-width: 0;
 }
 
 .half .half {
-	gap: 1.5rem;	
+	gap: 1.5rem;
 	grid-template-columns: repeat(2, 1fr);
 }
 
@@ -1128,5 +1121,13 @@ hr {
 
 	.grid_bottom-left {
 		margin-top: auto;
+	}
+
+	.login-bc_blob {
+		height: 100%;
+		width: 100%;
+		background-color: var(--secondary);
+		animation: 120s linear infinite alternate blob;
+		transform: scale(1.5);
 	}
 }
