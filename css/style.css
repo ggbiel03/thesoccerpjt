@@ -171,12 +171,12 @@ hr {
 	font-size: 1.6rem;
 }
 
-.form input[type="email"],
-.form input[type="text"],
-.form input[type="password"],
+.form input:not([type = "submit"]),
 .form select {
-	border: 1px solid var(--primary);
-	color: var(--primary)
+	color: var(--primary);
+	border-color: transparent transparent var(--primary) transparent;
+	background-color: #eeeeee;
+	border-width: 2px;
 }
 
 .form input[type="email"] {
@@ -205,12 +205,6 @@ hr {
 	flex-flow: column;
 	border-radius: 1rem;
 	min-width: 0;
-}
-
-.form fieldset input,
-.form fieldset select {
-	border-color: transparent transparent var(--primary) transparent !important;
-	background-color: #eeeeee;
 }
 
 ::-webkit-input-placeholder {
