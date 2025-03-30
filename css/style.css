@@ -994,12 +994,12 @@ hr {
 	overflow: hidden;
 }
 
-.login_form:first-of-type {
+.login_form:first-of-type:not(.login_form--active):not(.login_form--inactive) {
 	opacity: 1;
 	pointer-events: all;
 }
 
-.login_form:not(:first-of-type) {
+.login_form:not(:first-of-type):not(.login_form--active):not(.login_form--inactive) {
 	display: none;
 }
 
