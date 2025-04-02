@@ -1198,10 +1198,6 @@ hr {
 	box-sizing: border-box;
 }
 
-.produto-tamanho input:not(:disabled)+label:hover {
-	background-color: var(--secondary);
-}
-
 .produto-tamanho input:checked+label {
 	outline: 3px solid var(--primary);
 }
