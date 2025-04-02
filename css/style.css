@@ -901,6 +901,10 @@ hr {
 }
 
 @media (max-width: 768px) {
+	.banner-loja {
+		min-height: 2rem;
+	}
+	
 	.banner-loja_escudo {
 		height: 7rem;
 	}

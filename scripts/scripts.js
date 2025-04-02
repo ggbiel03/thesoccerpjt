@@ -116,12 +116,3 @@ let footerContent = `
 `;
 const FOOTER = document.querySelector("#footer");
 FOOTER.innerHTML = footerContent;
-
-//CARROUSSEL_________________________________________
-var owl = $('.owl-carousel');
-owl.owlCarousel({
-    loop: true,
-    items: 1,
-    autoplay: true,
-    autoplayTimeout: 10000
-});
