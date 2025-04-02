@@ -1264,7 +1264,7 @@ hr {
 			"galeria main"
 			"info 	info";
 		grid-template-columns: repeat(2, 1fr);
-		margin: 4rem 0;
+		margin: 8rem 0;
 	}
 
 	.grid-produto_img {
