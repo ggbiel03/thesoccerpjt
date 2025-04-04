@@ -31,7 +31,7 @@ let headerContent = `
                             <a href="pedidos.html">
                                 <li>MEUS PEDIDOS</li>
                             </a>
-                            <a href="info.html">
+                            <a href="meu-perfil.html">
                                 <li>MINHAS INFORMAÇÕES</li>
                             </a>
                             <a href="#">
@@ -91,7 +91,7 @@ let footerContent = `
         <h2>Área do Cliente</h2>
         <li><a href="login.html">Login / Cadastro</a></li>
         <li><a href="pedidos.html">Meus Pedidos</a></li>
-        <li><a href="info.html">Minhas Informações</a></li>
+        <li><a href="meu-perfil.html">Minhas Informações</a></li>
     </ul>
     <ul>
         <h2>Empresa</h2>

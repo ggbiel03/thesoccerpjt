@@ -164,6 +164,7 @@ hr {
 	max-width: 100%;
 	width: 1024px;
 	margin: 0 auto;
+	box-sizing: border-box;
 }
 
 .form input,
@@ -625,6 +626,7 @@ hr {
 	color: var(--primary);
 }
 
+.page-title,
 .produtos_titulo {
 	color: var(--primary);
 	font-weight: 600;
@@ -671,11 +673,20 @@ hr {
 	}
 
 	.produtos_titulo {
-		font-size: 2.5rem;
+		font-size: 2.1rem;
+		border-block-width: 3px;
 	}
 
 	.produtos_itens {
 		grid-template-columns: repeat(2, 1fr);
+	}
+	
+
+	.produtos_preco {
+		font-size: 1.6rem;
+	}
+	.produtos_parcelas {
+		font-size: 1.2rem;
 	}
 }
 
@@ -711,6 +722,7 @@ hr {
 .newsletter_form input[type="email"],
 .newsletter_form select {
 	border-color: var(--secondary);
+	background-color: #FFFDFA;
 }
 
 .newsletter_title {
@@ -905,7 +917,7 @@ hr {
 		min-height: 0;
 		padding: 6rem 8% 4rem;
 	}
-	
+
 	.banner-loja_escudo {
 		height: 7rem;
 	}
@@ -1169,7 +1181,7 @@ hr {
 
 .produto-descricao {
 	line-height: 1.3;
-    margin-bottom: 2rem;
+	margin-bottom: 2rem;
 }
 
 .selecao-produto {
@@ -1231,6 +1243,10 @@ hr {
 	background-color: #FFFDFA;
 }
 
+.btn--thick {
+	padding: 1rem 2rem !important;
+}
+
 .btn-compra {
 	background-color: #a0e4c7;
 }
@@ -1240,9 +1256,9 @@ hr {
 	padding-top: 2rem;
 }
 
-.grid-produto_info h3{
+.grid-produto_info h3 {
 	font-weight: 600;
-	font-size: 2rem;	
+	font-size: 2rem;
 	margin-bottom: 1.5rem;
 }
 
@@ -1255,7 +1271,7 @@ hr {
 	margin-bottom: 0.5rem;
 }
 
-.spec-list strong{
+.spec-list strong {
 	font-weight: 600;
 	color: #333;
 
@@ -1272,13 +1288,15 @@ hr {
 
 	.grid-produto_img {
 		grid-area: galeria;
-		}
-		.grid-produto_main {
-			grid-area: main;
-		}
-		.grid-produto_info {
-			grid-area: info;
-		}
+	}
+
+	.grid-produto_main {
+		grid-area: main;
+	}
+
+	.grid-produto_info {
+		grid-area: info;
+	}
 
 	.produto-nome {
 		display: none;
@@ -1302,5 +1320,26 @@ hr {
 	.produto-nome {
 		margin: 4rem 2rem 1rem;
 		font-weight: 600;
+	}
+}
+
+/* MINHAS INFORMAÇÕES__________________________________ */
+.margin-y {
+	margin-top: 7rem;
+	margin-bottom: 7rem;
+}
+
+.page-title {
+	font-size: 3rem;
+	border-bottom-width: 2px;
+}
+
+.add-pad {
+	padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+	.page-title {
+		font-size: 2.1rem;
 	}
 }
