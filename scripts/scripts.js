@@ -1,4 +1,6 @@
 //HEADER_____________________________________________
+const HEADER = document.querySelector("#header");
+
 let headerContent = `
         <nav class="header_nav">
             <div class="header_escudo">
@@ -16,11 +18,11 @@ let headerContent = `
                 </a>
             </div>
             <!-- Add/remover classe header_usuario--active conforme usuário logado -->
-            <div class="header_usuario">
+            <div class="header_usuario header_usuario--active">
                 <p class="header_nome">Olá, <span id="username">Gabriel!</span></p>
-                <a href="cart.html" class="header_carrinho">
+                <div class="header_carrinho" id="header_carrinho">
                     <img src="img/icon/bag.png" alt="Carrinho de Compras">
-                </a>
+                </div>
                 <div class="header_user">
                     <a href="login.html" class="header_login">Entrar / Cadastro</a>
                     <div class="header_user-menu">
@@ -49,7 +51,6 @@ let headerContent = `
         </div>
         `;
 
-const HEADER = document.querySelector("#header");
 HEADER.innerHTML = headerContent;
 
 //FOOTER_____________________________________________
@@ -116,3 +117,154 @@ let footerContent = `
 `;
 const FOOTER = document.querySelector("#footer");
 FOOTER.innerHTML = footerContent;
+
+
+// CARRINHO DE COMPRAS ___________________________________________________
+const CART_BLOCK = `
+    <!-- Início Carrinho -->
+    <div id="cart">
+        <div class="cart">
+            <div class="close-cart close-x">X</div>
+            <h2 class="cart_title">Carrinho<span id="cart_qtde">2</span></h2>
+
+            <!-- Início Lista Carrinho -->
+            <div class="cart_items">
+                <!-- Item Carrinho -->
+                <div class="cart_item">
+
+                    <a href="produto.html">
+                        <img src="img/produto/corinthians.jpg" alt="">
+                    </a>
+                    <div class="cart_descricao">
+                        <a href="produto.html">
+                            <h3 class="cart_produto">Camisa Corinthians I 24/25 s/n° Torcedor Nike Masculina</h3>
+                            R$ <span class="cart_produto-preco">314,99</span>
+                        </a>
+                    </div>
+                    <div class="cart_qtde">
+                        <select name="qtde" class="produto-qtde" required>
+                            <option value="1">1</option>
+                            <option value="2" selected>2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                        </select>
+                        <div class="remover">Remover</div>
+                    </div>
+
+                    <div class="cart_remover"></div>
+                </div>
+
+                <!-- Item Carrinho -->
+                <div class="cart_item">
+
+                    <a href="produto.html">
+                        <img src="img/produto/corinthians.jpg" alt="">
+                    </a>
+                    <div class="cart_descricao">
+                        <a href="produto.html">
+                            <h3 class="cart_produto">Camisa Corinthians I 24/25 s/n° Torcedor Nike Masculina</h3>
+                            R$ <span class="cart_produto-preco">314,99</span>
+                        </a>
+                    </div>
+                    <div class="cart_qtde">
+                        <select name="qtde" class="produto-qtde" required>
+                            <option value="1">1</option>
+                            <option value="2" selected>2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                        </select>
+                        <div class="remover">Remover</div>
+                    </div>
+
+                    <div class="cart_remover"></div>
+                </div>
+            </div>
+            <!-- Fim Lista Carrinho -->
+            <div class="cart_empty">
+                Seu carrinho está vazio
+            </div>
+            <div class="cart_suptotal">
+               Total
+               <span class="cart_valor">R$ 629,98</span>
+            </div>
+            <a href="#" class="btn btn--cart">
+                Finalizar compra
+            </a>
+        </div>
+        <div class="cart_bc close-cart"></div>
+    </div>
+    <!-- Fim Carrinho -->
+    `;
+
+HEADER.insertAdjacentHTML("afterend", CART_BLOCK);
+
+// Abrir/ fechar carrinho
+const BTN_CART = document.querySelector("#header_carrinho");
+const CARRINHO = document.querySelector("#cart");
+let closeCartBtn = document.querySelectorAll(".close-cart");
+
+function openCart() {
+    CARRINHO.classList.add("cart--active");
+    document.body.classList.add("no-scroll");
+}
+
+function closeCart() {
+    CARRINHO.classList.remove("cart--active");
+    document.body.classList.remove("no-scroll");
+}
+
+
+BTN_CART.addEventListener("click", () => openCart());
+closeCartBtn.forEach(e => e.addEventListener("click", () => closeCart()));

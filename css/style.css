@@ -143,11 +143,12 @@ table {
 	--font: "Inter", sans-serif;
 	--primary: #1e302b;
 	--secondary: #edcf85;
+	--white: #FFFDFA;
 	font-family: var(--font);
 	max-width: 100%;
 	overflow-x: hidden;
 	font-size: 62.5%;
-	background-color: #FFFDFA;
+	background-color: var(--white);
 
 }
 
@@ -319,6 +320,7 @@ hr {
 
 .header_carrinho {
 	display: none;
+	cursor: pointer;
 }
 
 .header_usuario--active .header_nome,
@@ -680,11 +682,12 @@ hr {
 	.produtos_itens {
 		grid-template-columns: repeat(2, 1fr);
 	}
-	
+
 
 	.produtos_preco {
 		font-size: 1.6rem;
 	}
+
 	.produtos_parcelas {
 		font-size: 1.2rem;
 	}
@@ -722,7 +725,7 @@ hr {
 .newsletter_form input[type="email"],
 .newsletter_form select {
 	border-color: var(--secondary);
-	background-color: #FFFDFA;
+	background-color: var(--white);
 }
 
 .newsletter_title {
@@ -990,7 +993,7 @@ hr {
 
 
 .login_form {
-	background-color: #FFFDFA;
+	background-color: var(--white);
 	border-radius: 1.5rem;
 	box-shadow: 0 0 2rem #1e302bbb;
 	box-sizing: border-box;
@@ -1240,7 +1243,8 @@ hr {
 	padding: 0.8rem;
 	font-weight: 400;
 	cursor: pointer;
-	background-color: #FFFDFA;
+	background-color: var(--white);
+	display: inline-block;
 }
 
 .btn--thick {
@@ -1342,4 +1346,200 @@ hr {
 	.page-title {
 		font-size: 2.1rem;
 	}
+}
+
+/* CARRINHO DE COMPRAS_________________________________ */
+.no-scroll {
+	overflow: hidden;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
+
+#cart {
+	position: fixed;
+	z-index: 99;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #00000066;
+	z-index: -1;
+	opacity: 0;
+	transition: 0.3s;
+}
+
+#cart.cart--active {
+	z-index: 99;
+	opacity: 1;
+}
+
+.cart--active .cart {
+	right: 0;
+}
+
+.cart {
+	position: absolute;
+	overflow-y: scroll; 
+	overflow-x: clip;
+	top: 0;
+	right: -100%;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	max-width: 90%;
+	width: 500px;
+	height: 100%;
+	background-color: var(--white);
+	padding: 2rem;
+	transition: 0.5s ease-in-out;
+	box-shadow: -1rem 0 1rem #00000077;
+}
+
+.close-x {
+	font-weight: 600;
+	font-size: 2rem;
+	cursor: pointer;
+	text-align: right;
+	padding: 0.5rem;
+	align-self: flex-end;
+}
+
+.close-x:hover {
+	opacity: 0.5;
+}
+
+.cart_title {
+	font-size: 2.5rem;
+	border-bottom: 2px solid var(--secondary);
+	margin-bottom: 2rem;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+#cart_qtde {
+	--size: 1.3rem;
+	color: var(--white);
+	font-weight: 300;
+	background-color: var(--primary);
+	border-radius: 50%;
+	display: inline-block;
+	width: var(--size);
+	height: var(--size);
+	text-align: center;
+	vertical-align: top;
+	padding: 0.5rem;
+	font-size: var(--size);
+	margin-left: 0.5rem;
+}
+
+.cart_empty {
+	display: none;
+	align-content: center;
+	text-align: center;
+	font-weight: 600;
+	font-size: 2ch;
+}
+
+.cart_empty,
+.cart_items {
+	flex-grow: 1;
+}
+
+.cart_items:not(:has(.cart_item))+.cart_empty {
+	display: block;
+}
+
+.cart_items:not(:has(.cart_item)) ~ .cart_suptotal,
+.cart_items:not(:has(.cart_item)) ~ .btn {
+	display: none;
+}
+
+.cart_items:empty {
+	display: none;
+}
+
+.cart_items {
+	display: flex;
+	flex-direction: column;
+}
+
+.cart_item {
+	display: grid;
+	grid-template-columns: 20% 1fr 20%;
+	align-items: flex-start;
+	padding: 1rem 0 0;
+	gap: 1rem;
+}
+
+.cart_item + .cart_item {
+	border-top: 1px solid #dddddd;
+}
+
+.cart_item a {
+	color: var(--primary);
+}
+
+.cart_descricao {
+	font-weight: 300;
+	line-height: 1.1;
+}
+
+.cart_produto {
+	font-weight: 500;
+	margin-bottom: 0.8rem;
+}
+
+.cart_item img {
+	width: 100%;
+}
+
+.produto-qtde {
+	padding: 0.3rem 0.5rem;
+	border-radius: 0;
+}
+
+.remover {
+	margin-top: 0.5rem;
+	cursor: pointer;
+	text-align: center;
+	color: #bd4040;
+}
+
+.remover:hover {
+	color: #f10000;
+}
+
+.cart_suptotal {
+	display: flex;
+	justify-content: space-between;
+	margin: 3rem 0;
+	padding-top: 1rem;
+	border-top: 1px solid var(--secondary);
+	font-size: 2rem;
+	font-weight: 800;
+}
+
+.btn--cart {
+	justify-self: end;
+}
+
+.btn--cart {
+	text-align: center;
+	background-color: var(--secondary);
+	font-weight: 600;
+}
+
+.btn--cart:hover {
+	background-color: rgb(253, 212, 109);
+}
+
+.cart_bc {
+	cursor: pointer;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: -1;
 }
