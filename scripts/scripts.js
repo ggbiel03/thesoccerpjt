@@ -125,7 +125,7 @@ const CART_BLOCK = `
     <div id="cart">
         <div class="cart">
             <div class="close-cart close-x">X</div>
-            <h2 class="cart_title">Carrinho<span id="cart_qtde">2</span></h2>
+            <h2 class="cart_title">Sacola<span id="cart_qtde">2</span></h2>
 
             <!-- Início Lista Carrinho -->
             <div class="cart_items">
@@ -239,7 +239,7 @@ const CART_BLOCK = `
                Total
                <span class="cart_valor">R$ 629,98</span>
             </div>
-            <a href="#" class="btn btn--cart">
+            <a href="checkout.html" class="btn btn--cart">
                 Finalizar compra
             </a>
         </div>

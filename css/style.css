@@ -161,6 +161,19 @@ hr {
 	margin-block-start: 1.3rem;
 }
 
+p {
+	line-height: 1.3;
+	text-indent: 2rem;
+}
+
+p strong {
+	font-weight: 600;
+}
+
+p + p {
+	margin-top: 1rem;
+}
+
 .container {
 	max-width: 100%;
 	width: 1024px;
@@ -177,7 +190,7 @@ hr {
 .form input:not([type="submit"]),
 .form select {
 	color: var(--primary);
-	border-color: transparent transparent var(--primary) transparent;
+	border-color: transparent transparent #333 transparent;
 	background-color: #eeeeee;
 	border-width: 2px;
 }
@@ -458,12 +471,12 @@ hr {
 }
 
 .banner_item {
-	display: flex;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
 	overflow: hidden;
 }
 
 .banner_img {
-	width: 50%;
 	display: flex;
 	align-items: flex-end;
 	padding-right: 20px;
@@ -555,7 +568,6 @@ hr {
 
 	.banner_info {
 		text-align: right;
-		width: 100%;
 		align-items: flex-end;
 		padding: 0 1rem 75px;
 	}
@@ -567,6 +579,10 @@ hr {
 	.owl-theme .owl-dots .owl-dot span {
 		width: 1rem;
 		height: 1rem;
+	}
+
+	.banner_item {
+		grid-template-columns: 1fr;
 	}
 }
 
@@ -636,6 +652,7 @@ hr {
 	font-size: 5rem;
 	border-bottom: 5px solid var(--secondary);
 	margin-bottom: 2rem;
+	line-height: 1.2;
 }
 
 .produtos_produto {
@@ -916,6 +933,11 @@ hr {
 }
 
 @media (max-width: 768px) {
+	.banner-loja {
+		justify-content: center;
+		text-align: center;
+	}
+
 	.banner-loja--produto {
 		min-height: 0;
 		padding: 6rem 8% 4rem;
@@ -1133,7 +1155,7 @@ hr {
 @media (min-width: 769px) {
 	.half {
 		grid-template-columns: repeat(2, 1fr);
-		gap: 4rem;
+		gap: 2rem;
 	}
 
 	.grid_bottom-left {
@@ -1346,6 +1368,11 @@ hr {
 	.page-title {
 		font-size: 2.1rem;
 	}
+
+	.margin-y {
+		margin-top: 3rem;
+		margin-bottom: 3rem;
+	}
 }
 
 /* CARRINHO DE COMPRAS_________________________________ */
@@ -1380,7 +1407,7 @@ hr {
 
 .cart {
 	position: absolute;
-	overflow-y: scroll; 
+	overflow-y: scroll;
 	overflow-x: clip;
 	top: 0;
 	right: -100%;
@@ -1433,6 +1460,10 @@ hr {
 	margin-left: 0.5rem;
 }
 
+#cart_qtde:empty {
+	display: none;
+}
+
 .cart_empty {
 	display: none;
 	align-content: center;
@@ -1450,8 +1481,12 @@ hr {
 	display: block;
 }
 
-.cart_items:not(:has(.cart_item)) ~ .cart_suptotal,
-.cart_items:not(:has(.cart_item)) ~ .btn {
+.cart_items:not(:has(.cart_item)) {
+	display: none;
+}
+
+.cart_items:not(:has(.cart_item))~.cart_suptotal,
+.cart_items:not(:has(.cart_item))~.btn {
 	display: none;
 }
 
@@ -1472,7 +1507,7 @@ hr {
 	gap: 1rem;
 }
 
-.cart_item + .cart_item {
+.cart_item+.cart_item {
 	border-top: 1px solid #dddddd;
 }
 
@@ -1494,7 +1529,7 @@ hr {
 	width: 100%;
 }
 
-.produto-qtde {
+.cart .produto-qtde {
 	padding: 0.3rem 0.5rem;
 	border-radius: 0;
 }
@@ -1528,10 +1563,11 @@ hr {
 	text-align: center;
 	background-color: var(--secondary);
 	font-weight: 600;
+	border: none;
 }
 
 .btn--cart:hover {
-	background-color: rgb(253, 212, 109);
+	background-color: #cbb174;
 }
 
 .cart_bc {
@@ -1542,4 +1578,220 @@ hr {
 	top: 0;
 	left: 0;
 	z-index: -1;
+}
+
+/* PEDIDOS________________________________________________________*/
+.grid-pedidos {
+	display: flex;
+	flex-flow: column;
+	padding: 7rem 1rem;
+	gap: 3rem;
+	min-height: 50vh;
+}
+
+.grid-pedidos:has(.pedido) .sem-pedidos {
+	display: none;
+}
+
+.sem-pedidos {
+	display: block;
+	text-align: center;
+	font-size: 2.5rem;
+	color: #666666;
+	font-weight: 600;
+	align-content: center;
+}
+
+.pedido {
+	background-color: #ededed;
+	display: flex;
+	flex-flow: column;
+	box-sizing: border-box;
+}
+
+.pedido_detalhe {
+	display: flex;
+	gap: 1rem;
+	background-color: #cccccc;
+	color: #666666;
+	font-size: 1.8rem;
+	padding: 1rem;
+	font-weight: 400;
+}
+
+.pedido_item {
+	display: grid;
+	grid-template-columns: 15ch 1fr;
+	padding: 1rem 0;
+	margin: 0 1rem;
+	gap: 1rem
+}
+
+.pedido_imagem {
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	object-fit: contain;
+}
+
+.pedido_item+.pedido_item,
+.forma-pag li + li {
+	border-top: 1px solid #cccccc;
+}
+
+.pedido_desc {
+	line-height: 1.3;
+	font-weight: 300;
+	color: #333;
+}
+
+.pedido_produto {
+	font-weight: 600;
+	font-size: 1.8rem;
+}
+
+.pedido_produto a {
+	color: inherit;
+}
+
+@media (max-width: 768px) {
+	.grid-pedidos {
+		padding: 3rem 1rem;
+	}
+}
+
+/* FINALIZAR COMPRA________________________________________________________*/
+.grid-pedidos--checkout {
+	display: grid;
+	min-height: auto;
+}
+
+.grid-pedidos--checkout .pedido {
+	order: 1;
+}
+
+.grid-pedidos--checkout .pedido_detalhe {
+	font-weight: 600;
+}
+
+.grid-pedidos--checkout .pedido_produto {
+	font-size: 1.6rem;
+}
+
+.sumario {
+	display: flex;
+	flex-flow: column;
+	gap: 2rem;
+}
+
+.resumo {
+	padding: 1rem;
+}
+
+.resumo strong {
+	font-weight: 600;
+}
+
+.resumo_total {
+	font-size: 2rem;
+	border-top: 1px solid #cccccc;
+	padding-top: 1rem;
+	font-weight: 600;
+}
+
+.resumo li{
+	display: flex;
+	justify-content: space-between;
+}
+
+.resumo li  + li{
+	margin-top: 1rem;
+}
+
+.forma-pag {
+	display: flex;
+	flex-flow: column;
+}
+
+.checkout .form {
+	background-color: var(--white);
+}
+
+.checkout-opt {
+	padding: 1rem;
+	cursor: pointer;
+	display: block;
+	margin: 0 !important;
+	background-color: #ededed;
+}
+
+.checkout-opt + .form {
+	display: none;
+}
+
+.form-card {
+	border-width:  0 1px 1px 1px;
+	border-color: #ededed;
+	border-style: solid;
+	padding: 1rem;
+	background-color: var(--white);
+	flex-flow: column;
+	display: none;
+}
+
+.form-card label {
+	margin-top: 1rem;
+}
+
+.checkout-opt:has(input:checked) + .form-card {
+	display: flex;
+}
+
+.btn-comprar {
+	margin: 2rem auto 0;
+	display: block;
+	width: 75%;
+	padding: 0.8rem !important;
+}
+
+ @media (min-width: 769px) {
+	.sumario {
+		order: 1;
+	}
+
+	.grid-pedidos--checkout {
+		grid-template-columns: 1fr 40%;
+	}
+
+	.grid-pedidos--checkout .pedido_item {
+		grid-template-columns: 20% 1fr ;
+	}
+}
+
+/* SOBRE________________________________________ */
+.grid-sobre {
+	display: grid;
+	grid-template-columns: 30% 1fr;
+	column-gap: 1rem;
+}
+
+.sobre {
+	padding: 1rem;
+}
+
+.sobre-img {
+	width: 100%;
+	aspect-ratio: 2/3;
+	object-fit: cover;
+}
+
+@media (max-width: 768px) {
+	.grid-sobre { 
+		grid-template-columns: 1fr;
+		row-gap: 2rem;
+	}
+
+	.sobre-img {
+		aspect-ratio: 2/1;
+		object-position: center 20%;
+	}
 }
